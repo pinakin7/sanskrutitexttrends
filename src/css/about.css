@@ -1,0 +1,14 @@
+.quote {
+  font-style: italic;
+  font-size: 24px;
+  color: #555;
+  opacity: 0;
+  animation: fadeInAnimation 2s forwards;
+  text-align: center;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
