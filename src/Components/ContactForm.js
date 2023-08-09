@@ -22,16 +22,17 @@ const ContactForm = () => {
         direction="column"
         alignContent="center"
         alignItems="center"
+        style={{ paddingBottom: "0.5rem", paddingTop: "0.5rem" }}
       >
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <Typography variant="h5" align="center" gutterBottom margin="0.5rem">
             Contact Us
           </Typography>
         </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <TextField label="Name" variant="outlined" required fullWidth />
         </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <TextField
             label="Email"
             variant="outlined"
@@ -40,11 +41,20 @@ const ContactForm = () => {
             fullWidth
           />
         </Grid>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+          <TextField label="Organisation" variant="outlined" required fullWidth />
+        </Grid>
 
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <FormControl fullWidth>
-            <InputLabel id="positionLabel">Position</InputLabel>
-            <Select labelId="positionLabel" id="position" label="Position" fullWidth>
+            <InputLabel id="positionLabel">Position *</InputLabel>
+            <Select
+              labelId="positionLabel"
+              id="position"
+              label="Position"
+              fullWidth
+              required
+            >
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
@@ -56,7 +66,7 @@ const ContactForm = () => {
           </FormControl>
         </Grid>
 
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <TextField
             label="Message"
             variant="outlined"
@@ -66,10 +76,10 @@ const ContactForm = () => {
             fullWidth
           />
         </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign:"center" }} width={400}>
+        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
           <Button
             variant="contained"
-            color="primary"
+            color="success"
             size="large"
             type="submit"
             endIcon={<Mail />}
