@@ -1,16 +1,13 @@
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardMedia,
   Container,
   Divider,
   Grid,
   Paper,
-  Typography,
 } from "@mui/material";
-import { makeStyles, styled } from "@mui/styles";
-import React, { useEffect, useState } from "react";
+import { makeStyles } from "@mui/styles";
+import React, {  } from "react";
 import { useInView } from "react-intersection-observer";
 import ContactForm from "./ContactForm";
 
