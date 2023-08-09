@@ -2,31 +2,36 @@ import { Container } from "@mui/material";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import CarouselItem from "./CarouselItem";
+import Carpet from "../img/carpet-01.jpeg";
+import Stitch from "../img/img6.jpg";
+import Weaving from "../img/img-4.webp";
+import Fabrics from "../img/img3.jpeg";
+import Jacquard from "../img/img5.jpg";
 
 export default function Home() {
   var items = [
     {
-      img: "./img/carpet-01.jpeg",
+      img: Carpet,
       alt: "Carpet Yarns",
       heading: "Carpet Yarns",
     },
     {
-      img: "./img/img6.jpg",
+      img: Stitch,
       alt: "Stitch Thread",
       heading: "Stitch Thread",
     },
     {
-      img: "./img/img-4.webp",
+      img: Weaving,
       alt: "Weaving Yarns",
       heading: "Weaving Yarns",
     },
     {
-      img: "./img/img3.jpeg",
+      img: Fabrics,
       alt: "Fabrics",
       heading: "Fabrics",
     },
     {
-      img: "./img/img5.jpg",
+      img: Jacquard,
       alt: "Jacquard Fabric",
       heading: "Jacquard Fabric",
     },
