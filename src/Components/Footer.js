@@ -1,5 +1,12 @@
-import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import {
+  Facebook,
+  LinkedIn,
+  Mail,
+} from "@mui/icons-material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
   Container,
   Divider,
   Grid,
@@ -8,6 +15,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { styled } from "styled-components";
+import Logo from "../img/logo.png";
 
 const FooterContainer = styled.footer`
   background-color: white;
@@ -53,7 +61,7 @@ const ContactInfo = styled.div`
 
 const Copyright = styled(Typography)`
   text-align: center;
-  margin-top: 20px;
+  margin-top: 4rem;
 `;
 
 export default function Footer() {
@@ -67,31 +75,51 @@ export default function Footer() {
             <Grid item xs={12} sm={6}>
               <Typography variant="h5">Connect With Us</Typography>
               <SocialIcons>
-                <IconButton aria-label="Facebook">
+                <IconButton
+                  aria-label="Facebook"
+                  href="https://www.facebook.com/sanskrutitexttrends/"
+                >
                   <Facebook />
                 </IconButton>
-                <IconButton aria-label="Twitter">
-                  <Twitter />
-                </IconButton>
-                <IconButton aria-label="LinkedIn">
+                <IconButton
+                  aria-label="LinkedIn"
+                  href="https://www.linkedin.com/in/vimal-kumar-viradiya-3b1b78177"
+                >
                   <LinkedIn />
-                </IconButton>
-                <IconButton aria-label="Instagram">
-                  <Instagram />
                 </IconButton>
               </SocialIcons>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Typography variant="h5" textAlign="right">Contact Information</Typography>
+              <Typography variant="h5" textAlign="right">
+                Contact Information
+              </Typography>
               <ContactInfo>
                 <Typography variant="body2">
-                  Email: contact@example.com
+                  <IconButton
+                    aria-label="Email"
+                    href="mailto:vimalmviradiya@sanskrutitexttrends.co?subject = Enquiry&body = Need to do Buisness with you"
+                  >
+                    <Mail />
+                  </IconButton>
+                  vimalmviradiya@sanskrutitexttrends.co
                 </Typography>
               </ContactInfo>
             </Grid>
           </Grid>
           <Copyright variant="body2" component="p">
-            © 2023 Sanskruti Text Trends. All rights reserved.
+            <Card style={{alignContent:"center", marginTop:"2rem"}} >
+              <CardMedia
+              component="img"
+                height="100"
+                image={Logo}
+                style={{ objectFit: "contain" }}
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  © 2023 Sanskruti Text Trends. All rights reserved.
+                </Typography>
+              </CardContent>
+            </Card>
           </Copyright>
         </Container>
       </FooterContainer>
