@@ -15,7 +15,6 @@ import { FormatQuote } from "@mui/icons-material";
 import "@fontsource/oswald/600.css";
 import "@fontsource/lato/400-italic.css";
 import { makeStyles } from "@mui/styles";
-import { useInView } from "react-intersection-observer";
 
 const useStyles = makeStyles((theme) => ({
   fadeIn: {

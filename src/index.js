@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
+import Contact from "./Components/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
     </Router> */}
     <Home />
     <About />
+    <Contact />
     <Footer />
   </React.StrictMode>
 );
