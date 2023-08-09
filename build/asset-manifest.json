@@ -1,8 +1,13 @@
 {
   "files": {
     "main.css": "/sanskrutitexttrends/static/css/main.7bb9141b.css",
-    "main.js": "/sanskrutitexttrends/static/js/main.1455e310.js",
+    "main.js": "/sanskrutitexttrends/static/js/main.eb4631f3.js",
     "static/js/787.455e517d.chunk.js": "/sanskrutitexttrends/static/js/787.455e517d.chunk.js",
+    "static/media/img5.jpg": "/sanskrutitexttrends/static/media/img5.2b69da0292bdd84f63fd.jpg",
+    "static/media/img3.jpeg": "/sanskrutitexttrends/static/media/img3.f6efde10bef9ea31bbf0.jpeg",
+    "static/media/img6.jpg": "/sanskrutitexttrends/static/media/img6.a5345b8acb5d69e73c82.jpg",
+    "static/media/img-4.webp": "/sanskrutitexttrends/static/media/img-4.d0f34b43cc1de1a25aef.webp",
+    "static/media/carpet-01.jpeg": "/sanskrutitexttrends/static/media/carpet-01.fc799c3b22623aed8149.jpeg",
     "static/media/logo.png": "/sanskrutitexttrends/static/media/logo.df6cca541d8fff482cb5.png",
     "static/media/lato-latin-400-italic.woff2": "/sanskrutitexttrends/static/media/lato-latin-400-italic.516d382b3da7e145024b.woff2",
     "static/media/lato-latin-400-italic.woff": "/sanskrutitexttrends/static/media/lato-latin-400-italic.b2c003608660cd56fd99.woff",
@@ -20,11 +25,11 @@
     "static/media/oswald-cyrillic-ext-600-normal.woff2": "/sanskrutitexttrends/static/media/oswald-cyrillic-ext-600-normal.eb408cff8699f44c8fc5.woff2",
     "index.html": "/sanskrutitexttrends/index.html",
     "main.7bb9141b.css.map": "/sanskrutitexttrends/static/css/main.7bb9141b.css.map",
-    "main.1455e310.js.map": "/sanskrutitexttrends/static/js/main.1455e310.js.map",
+    "main.eb4631f3.js.map": "/sanskrutitexttrends/static/js/main.eb4631f3.js.map",
     "787.455e517d.chunk.js.map": "/sanskrutitexttrends/static/js/787.455e517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7bb9141b.css",
-    "static/js/main.1455e310.js"
+    "static/js/main.eb4631f3.js"
   ]
 }
