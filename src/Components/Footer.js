@@ -23,16 +23,16 @@ const FooterContainer = styled.footer`
   padding: 40px 0;
 `;
 
-const ContentContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+// const ContentContainer = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
+//   @media (max-width: 600px) {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// `;
 
 const SocialIcons = styled.div`
   display: flex;
