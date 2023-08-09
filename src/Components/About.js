@@ -8,27 +8,62 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../img/logo.png";
 import "../css/about.css";
 import { FormatQuote } from "@mui/icons-material";
-import '@fontsource/oswald/600.css';
-import '@fontsource/lato/400-italic.css';
+import "@fontsource/oswald/600.css";
+import "@fontsource/lato/400-italic.css";
+import { makeStyles } from "@mui/styles";
+import { useInView } from "react-intersection-observer";
+
+const useStyles = makeStyles((theme) => ({
+  fadeIn: {
+    opacity: 0,
+    transform: "translateY(20px)",
+    transition: "opacity 1s, transform 1s",
+    willChange: "opacity, transform",
+
+    "&.fade-entered": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
+  },
+  // Add other styles if needed
+}));
 
 export default function About() {
+  const classes = useStyles();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div id="about" style={{ margin: "5rem" }}>
-      <Container>
+      <Container
+        className={`${classes.fadeIn} ${isVisible ? "fade-entered" : ""}`}
+      >
         <Divider variant="middle" />
         <Paper elevation={3}>
-          <Card style={{padding:"0.4rem"}}>
+          <Card style={{ padding: "0.4rem" }}>
             <CardHeader
               title="About Us"
               subheader="Sanskruti Text Trends"
               style={{ textAlign: "center" }}
-              titleTypographyProps={{fontSize:"35px", fontFamily:"Oswald"}}
+              titleTypographyProps={{ fontSize: "35px", fontFamily: "Oswald" }}
               className="cardTitle"
-              subheaderTypographyProps={{fontFamily:"Lato", fontSize:"20px"}}
+              subheaderTypographyProps={{
+                fontFamily: "Lato",
+                fontSize: "20px",
+              }}
             />
             <CardMedia
               component="img"
