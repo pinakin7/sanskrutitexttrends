@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import { Route, Router, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import About from "./Components/About";
-import { Divider } from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
