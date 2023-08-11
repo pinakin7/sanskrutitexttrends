@@ -13,6 +13,7 @@ import {
   AlertTitle,
 } from "@mui/material";
 import { CheckCircleOutline, Mail } from "@mui/icons-material";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -25,20 +26,51 @@ const ContactForm = () => {
   const [alertMsg, setAlertMsg] = useState("");
   const [alertType, setAlertType] = useState("");
 
-  const clearStates = ()=>{
+  const clearStates = () => {
     setName("");
     setEmail("");
     setOrg("");
     setPosition("");
     setSubject("");
     setMsg("");
-  }
+  };
+
+  const sendEmail = () => {
+    emailjs
+      .send(
+        "service_stt",
+        "template_stt",
+        {
+          // to_email: "vimalmviradiya@sanskrutitexttrends.co",
+          to_email: "pinakin548@gmail.com",
+          reply_to: email,
+          subject: subject,
+          from_name: name,
+          from_org: org,
+          from_position: position,
+          to_name: "Vimalkumar Viradiya",
+          message: msg,
+        },
+        "opCKvEbcN8HIJGeW5"
+      )
+      .then((response) => {
+        setAlertMsg(
+          `Submitted your ${subject}. We will get back to you within 5-6 buisness days. Thank you for reaching us!!!!`
+        );
+        setAlertType("success");
+      })
+      .catch((error) => {
+        setAlertMsg(
+          `Unable to submit your ${subject}. Please try again later. Thank you for reaching us!!!!`
+        );
+        setAlertType("error");
+      });
+  };
 
   const handleSubmit = () => {
     // e.preventDefault();
     setSubmitted(true);
-    setAlertMsg(`Submitted your ${subject}. We will get back to you within 5-6 buisness days. Thank you for reaching us!!!!`);
-    setAlertType("success");
+    sendEmail();
     clearStates();
   };
 
@@ -51,7 +83,9 @@ const ContactForm = () => {
             iconMapping={{
               success: <CheckCircleOutline fontSize="inherit" />,
             }}
-            onClose={()=>{setSubmitted(false)}}
+            onClose={() => {
+              setSubmitted(false);
+            }}
           >
             <AlertTitle>
               {alertType.charAt(0).toUpperCase() + alertType.slice(1)}
