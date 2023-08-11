@@ -54,6 +54,7 @@ const ContactForm = () => {
         "opCKvEbcN8HIJGeW5"
       )
       .then((response) => {
+        setSubmitted(true);
         setAlertMsg(
           `Submitted your ${subject}. We will get back to you within 5-6 buisness days. Thank you for reaching us!!!!`
         );
@@ -69,7 +70,6 @@ const ContactForm = () => {
 
   const handleSubmit = () => {
     // e.preventDefault();
-    setSubmitted(true);
     sendEmail();
     clearStates();
   };
