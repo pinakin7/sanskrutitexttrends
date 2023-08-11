@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sanskrutitexttrends/static/css/main.7bb9141b.css",
-    "main.js": "/sanskrutitexttrends/static/js/main.1f2c204f.js",
+    "main.js": "/sanskrutitexttrends/static/js/main.0e00f3e1.js",
     "static/js/787.455e517d.chunk.js": "/sanskrutitexttrends/static/js/787.455e517d.chunk.js",
     "static/media/img5.jpg": "/sanskrutitexttrends/static/media/img5.2b69da0292bdd84f63fd.jpg",
     "static/media/img3.jpeg": "/sanskrutitexttrends/static/media/img3.f6efde10bef9ea31bbf0.jpeg",
@@ -25,11 +25,11 @@
     "static/media/oswald-cyrillic-ext-600-normal.woff2": "/sanskrutitexttrends/static/media/oswald-cyrillic-ext-600-normal.eb408cff8699f44c8fc5.woff2",
     "index.html": "/sanskrutitexttrends/index.html",
     "main.7bb9141b.css.map": "/sanskrutitexttrends/static/css/main.7bb9141b.css.map",
-    "main.1f2c204f.js.map": "/sanskrutitexttrends/static/js/main.1f2c204f.js.map",
+    "main.0e00f3e1.js.map": "/sanskrutitexttrends/static/js/main.0e00f3e1.js.map",
     "787.455e517d.chunk.js.map": "/sanskrutitexttrends/static/js/787.455e517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7bb9141b.css",
-    "static/js/main.1f2c204f.js"
+    "static/js/main.0e00f3e1.js"
   ]
 }
