@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Paper,
   Typography,
@@ -9,86 +9,190 @@ import {
   Select,
   InputLabel,
   FormControl,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { Mail } from "@mui/icons-material";
 
 const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [org, setOrg] = useState("");
+  const [position, setPosition] = useState("");
+  const [subject, setSubject] = useState("");
+  const [msg, setMsg] = useState("");
+  const [open, setOpen] = useState("");
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alertType, setAlertType] = useState("");
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    setAlertMsg("Sumbitted");
+    setAlertType("success");
+    setOpen(true);
+  };
+
   return (
-    <Paper elevation={3} style={{ margin: "2rem" }}>
-      <Grid
-        container
-        columnGap={3}
-        columnSpacing={3}
-        direction="column"
-        alignContent="center"
-        alignItems="center"
-        style={{ paddingBottom: "0.5rem", paddingTop: "0.5rem" }}
-      >
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <Typography variant="h5" align="center" gutterBottom margin="0.5rem">
-            Contact Us
-          </Typography>
-        </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <TextField label="Name" variant="outlined" required fullWidth />
-        </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <TextField
-            label="Email"
-            variant="outlined"
-            type="email"
-            required
-            fullWidth
-          />
-        </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <TextField label="Organisation" variant="outlined" required fullWidth />
-        </Grid>
-
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <FormControl fullWidth>
-            <InputLabel id="positionLabel">Position *</InputLabel>
-            <Select
-              labelId="positionLabel"
-              id="position"
-              label="Position"
-              fullWidth
-              required
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={"Owner"}>Owner</MenuItem>
-              <MenuItem value={"Supervisior"}>Supervisor</MenuItem>
-              <MenuItem value={"Marketing Team"}>Marketing Team</MenuItem>
-              <MenuItem value={"Sales Team"}>Sales Team</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <TextField
-            label="Message"
-            variant="outlined"
-            multiline
-            rows={4}
-            required
-            fullWidth
-          />
-        </Grid>
-        <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
-          <Button
-            variant="contained"
-            color="success"
-            size="large"
-            type="submit"
-            endIcon={<Mail />}
+    <>
+      <Paper elevation={3} style={{ margin: "2rem" }}>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <Grid
+            container
+            columnGap={3}
+            columnSpacing={3}
+            direction="column"
+            alignContent="center"
+            alignItems="center"
+            style={{ paddingBottom: "0.5rem", paddingTop: "0.5rem" }}
           >
-            Submit
-          </Button>
-        </Grid>
-      </Grid>
-    </Paper>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <Typography
+                variant="h5"
+                align="center"
+                gutterBottom
+                margin="0.5rem"
+              >
+                Contact Us
+              </Typography>
+            </Grid>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <TextField
+                label="Name"
+                variant="outlined"
+                required
+                fullWidth
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+            </Grid>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <TextField
+                label="Email"
+                variant="outlined"
+                type="email"
+                required
+                fullWidth
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </Grid>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <TextField
+                label="Organisation"
+                variant="outlined"
+                required
+                fullWidth
+                value={org}
+                onChange={(e) => {
+                  setOrg(e.target.value);
+                }}
+              />
+            </Grid>
+
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <FormControl fullWidth>
+                <InputLabel id="positionLabel">Position *</InputLabel>
+                <Select
+                  labelId="positionLabel"
+                  id="position"
+                  label="Position"
+                  fullWidth
+                  required
+                  value={position}
+                  onChange={(e) => {
+                    setPosition(e.target.value);
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"Owner"}>Owner</MenuItem>
+                  <MenuItem value={"Supervisior"}>Supervisor</MenuItem>
+                  <MenuItem value={"Marketing Team"}>Marketing Team</MenuItem>
+                  <MenuItem value={"Sales Team"}>Sales Team</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <FormControl fullWidth>
+                <InputLabel id="subjectLabel">Subject *</InputLabel>
+                <Select
+                  labelId="subjectLabel"
+                  id="subject"
+                  label="Subject"
+                  fullWidth
+                  required
+                  value={subject}
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"General Enquiry"}>General Enquiry</MenuItem>
+                  <MenuItem value={"Sales Enquiry"}>Sales Enquiry</MenuItem>
+                  <MenuItem value={"Job Enquiry"}>Job Enquiry</MenuItem>
+                  <MenuItem value={"Product Enquiry"}>Product Enquiry</MenuItem>
+                  <MenuItem value={"Services Enquiry"}>
+                    Services Enquiry
+                  </MenuItem>
+                  <MenuItem value={"Price Enquiry"}>Price Enquiry</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <TextField
+                label="Message"
+                variant="outlined"
+                multiline
+                rows={4}
+                required
+                fullWidth
+                value={msg}
+                onChange={(e) => {
+                  setMsg(e.target.value);
+                }}
+              />
+            </Grid>
+            <Grid style={{ margin: "0.5rem", textAlign: "center" }} width={400}>
+              <Button
+                variant="contained"
+                color="success"
+                size="large"
+                type="button"
+                endIcon={<Mail />}
+                onClick={handleSubmit}
+              >
+                Submit
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+      </Paper>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity={alertType}
+          sx={{ width: "100%" }}
+        >
+          {alertMsg}
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 
