@@ -41,8 +41,8 @@ const ContactForm = () => {
         "service_stt",
         "template_stt",
         {
-          // to_email: "vimalmviradiya@sanskrutitexttrends.co",
-          to_email: "pinakin548@gmail.com",
+          to_email: "vimalmviradiya@sanskrutitexttrends.co",
+          // to_email: "pinakin548@gmail.com",
           reply_to: email,
           subject: subject,
           from_name: name,
@@ -54,11 +54,11 @@ const ContactForm = () => {
         "opCKvEbcN8HIJGeW5"
       )
       .then((response) => {
-        setSubmitted(true);
         setAlertMsg(
           `Submitted your ${subject}. We will get back to you within 5-6 buisness days. Thank you for reaching us!!!!`
         );
         setAlertType("success");
+        setSubmitted(true);
       })
       .catch((error) => {
         setAlertMsg(
