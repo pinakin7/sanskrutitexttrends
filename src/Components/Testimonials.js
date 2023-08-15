@@ -9,31 +9,49 @@ import {
   Divider,
 } from "@mui/material";
 import "../css/testimonials.css";
+import testimonials from "../data/testimonial-data";
+import { makeStyles } from "@mui/styles";
+import { useInView } from "react-intersection-observer";
 
-const testimonials = [
-  {
-    id: 1,
-    text: `" I'm so grateful to Sanskruti Text Trends for providing the best stitching threads for my fashion boutique. The threads are incredibly strong and reliable, making my designs stand the test of time. With their diverse range of threads, I always find the perfect match for my creations. Thank you for your exceptional products and excellent service! "`,
-    avatar: "https://bootdey.com/img/Content/avatar/avatar1.png",
+const useStyles = makeStyles((theme) => ({
+  slideInOut: {
+    opacity: 0,
+    transform: "translateY(100px)",
+    transition: "opacity 0.6s, transform 0.6s",
+    willChange: "opacity, transform",
+
+    "&.slide-in": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
+    "&.slide-out": {
+      opacity: 0,
+      transform: "translateY(100px)",
+    },
   },
-  {
-    id: 2,
-    text: `" I just had to share how much I love Sanskruti Text Trends' embroidery threads. The colors are so vibrant, and the threads work like a dream for my embroidery projects. I truly appreciate the high quality and reliability of your threads. You've won me over as a customer for life! "`,
-    avatar: "https://bootdey.com/img/Content/avatar/avatar2.png",
+  iframeContainer: {
+    position: "relative",
+    paddingBottom: "56.25%", // 16:9 aspect ratio (adjust as needed)
+    height: 0,
+    overflow: "hidden",
   },
-  {
-    id: 3,
-    text: `" Sanskruti Text Trends has transformed our textile production with their top-notch machinery. The TFO machines and weaving machines have boosted our efficiency, and the results are fantastic. Your team's support and dedication are commendable. Thank you for making our work easier and more enjoyable! "`,
-    avatar: "https://bootdey.com/img/Content/avatar/avatar3.png",
+  iframe: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
   },
-  {
-    id: 4,
-    text: `" Big shoutout to Sanskruti Text Trends for their exceptional industrial threads and carpet threads. These threads are super sturdy and have been a game-changer for our rug manufacturing business. Your attentive customer service is the icing on the cake. We're so glad we found you! "`,
-    avatar: "https://bootdey.com/img/Content/avatar/avatar4.png",
-  },
-];
+}));
 
 const Testimonials = () => {
+  const classes = useStyles();
+
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Only trigger once
+    threshold: 0.2, // Adjust the threshold as needed
+  });
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -54,50 +72,61 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div id="testimonials">
+    <>
       <Divider variant="middle" />
-      <CssBaseline />
-      <Paper elevation={3} className="testimonial-paper">
-        <Container maxWidth="auto">
-          <Typography variant="h2" align="center" my={4} fontFamily="Pacifico">
-            What our Clients say
-          </Typography>
-          <Box id="testimonials-section" textAlign="center" py={8}>
-            <div className="testimonial-container">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={testimonial.id}
-                  className={`testimonial ${
-                    index === currentIndex ? "active" : ""
-                  }`}
-                >
-                  <Avatar
-                    alt="Anonymous"
-                    src={testimonial.avatar}
-                    style={{ margin: "1rem" }}
-                  />
-                  <Typography
-                    variant="body1"
-                    paragraph
-                    style={{
-                      margin: "1rem",
-                      textAlign: "justify",
-                      padding: "0.5rem",
-                    }}
-                    className="testimonial-text"
+      <div
+        id="testimonials"
+        ref={ref}
+        className={`${classes.slideInOut} ${inView ? "slide-in" : "slide-out"}`}
+      >
+        <CssBaseline />
+        <Paper elevation={3} className="testimonial-paper">
+          <Container maxWidth="auto">
+            <Typography
+              variant="h2"
+              align="center"
+              my={4}
+              fontFamily="Pacifico"
+            >
+              What our Clients say
+            </Typography>
+            <Box id="testimonials-section" textAlign="center" py={8}>
+              <div className="testimonial-container">
+                {testimonials.map((testimonial, index) => (
+                  <div
+                    key={testimonial.id}
+                    className={`testimonial ${
+                      index === currentIndex ? "active" : ""
+                    }`}
                   >
-                    {testimonial.text}
-                  </Typography>
-                  <Typography variant="caption" color="textSecondary">
-                    - Anonymous
-                  </Typography>
-                </div>
-              ))}
-            </div>
-          </Box>
-        </Container>
-      </Paper>
-    </div>
+                    <Avatar
+                      alt="Anonymous"
+                      src={testimonial.avatar}
+                      style={{ margin: "1rem" }}
+                    />
+                    <Typography
+                      variant="body1"
+                      paragraph
+                      style={{
+                        margin: "1rem",
+                        textAlign: "justify",
+                        padding: "0.5rem",
+                      }}
+                      className="testimonial-text"
+                    >
+                      {testimonial.text}
+                    </Typography>
+                    <Typography variant="caption" color="textSecondary">
+                      - Anonymous
+                    </Typography>
+                  </div>
+                ))}
+              </div>
+            </Box>
+          </Container>
+        </Paper>
+      </div>
+    </>
   );
 };
 

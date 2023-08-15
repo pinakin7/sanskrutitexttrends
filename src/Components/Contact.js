@@ -51,7 +51,7 @@ export default function Contact() {
   const classes = useStyles();
 
   const [ref, inView] = useInView({
-    triggerOnce: true, // Only trigger once
+    triggerOnce: false, // Only trigger once
     threshold: 0.2, // Adjust the threshold as needed
   });
 
