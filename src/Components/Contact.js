@@ -1,7 +1,6 @@
 import {
   Button,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   Container,
@@ -114,7 +113,7 @@ export default function Contact() {
                         variant="contained"
                         color="success"
                         style={{ margin: "0.5rem" }}
-                        href="https://api.whatsapp.com/send?phone=919824200041"
+                        // href="https://api.whatsapp.com/send?phone=919824200041"
                       >
                         Click here to chat
                       </Button>

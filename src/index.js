@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
+import Testimonials from "./Components/Testimonials";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
     <Home />
     <About />
     <Contact />
+    <Testimonials />
     <Footer />
   </React.StrictMode>
 );
