@@ -52,7 +52,7 @@ export default function Contact() {
 
   const [ref, inView] = useInView({
     triggerOnce: false, // Only trigger once
-    threshold: 0.2, // Adjust the threshold as needed
+    threshold: 0.5, // Adjust the threshold as needed
   });
 
   return (
