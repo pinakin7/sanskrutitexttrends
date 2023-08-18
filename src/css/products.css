@@ -1,48 +1,92 @@
-/* ProductDisplayStyles.css */
+/* CarouselCard.css */
 
-/* Category */
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem;
+  transition: transform 0.3s ease-in-out;
+  width: auto;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.product-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.product-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px 8px 0 0;
+}
+
+.arrow-prev,
+.arrow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow-prev {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.arrow-next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
 .category {
-    padding: 16px;
-    background-color: #3f51b5;
-    color: white;
-    margin-bottom: 16px;
-  }
-  
-  /* Product Card */
-  .productCard {
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .productCard:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Product Card Content */
-  .productCardContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-  }
-  
-  .productImage {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    margin-bottom: 8px;
-  }
-  
-  /* Fading Animation */
-  .fade-entering,
-  .fade-exiting,
-  .fade-exited {
-    opacity: 0;
-  }
-  
-  .fade-entered {
-    opacity: 1;
-    transition: opacity 1s;
-  }
-  
+  padding: 10px;
+  background-color: #3f51b5;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.category:hover {
+  background-color: #304084;
+  transform: scale(1.1);
+}
+
+.product-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  /* Add more styling as needed */
+}
+
+.product-description {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  /* Add more styling as needed */
+}

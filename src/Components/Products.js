@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Card,
+  CardActionArea,
   CardContent,
-  CardMedia,
   CssBaseline,
   Divider,
-  Grid,
   Paper,
   Typography,
-  Fade,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useInView } from "react-intersection-observer";
 import "../css/products.css";
 import categories from "../data/products-data";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   slideInOut: {
     opacity: 0,
     transform: "translateY(100px)",
@@ -51,21 +51,8 @@ const Products = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false, // Only trigger once
-    threshold: 0.5, // Adjust the threshold as needed
+    threshold: 0.4, // Adjust the threshold as needed
   });
-
-  const [fadeIn, setFadeIn] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setFadeIn(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
@@ -94,28 +81,70 @@ const Products = () => {
         </Typography>
         <CssBaseline />
         <Paper elevation={3} style={{ padding: "2rem", margin: "2rem" }}>
-          <Grid container spacing={3}>
-            {categories.map((category) => (
-              <Grid item xs={12} md={3} key={category.name}>
-                <div className="category">{category.name}</div>
-                {category.products.map((product, index) => (
-                  <Fade in={fadeIn} key={product.name + index}>
-                    <Card className="productCard">
-                      <CardContent className="productCardContent">
-                        <CardMedia
-                          component="img"
-                          image={product.image}
-                          alt={product.name}
-                          className="productImage"
-                        />
-                        <Typography variant="h6">{product.name}</Typography>
-                      </CardContent>
-                    </Card>
-                  </Fade>
-                ))}
-              </Grid>
+          <div className="product-display">
+            {categories.map((category, categoryIndex) => (
+              <Paper
+                style={{
+                  width: "100%",
+                  marginTop: "0.5rem",
+                  marginBottom: "0.5rem",
+                  padding:"1rem"
+                }}
+                key={categoryIndex}
+                elevation={3}
+              >
+                <div className="slider-item">
+                  <div className="category">{category.name}</div>
+                  <Carousel
+                    showThumbs={false}
+                    centerMode={true}
+                    showStatus={false}
+                    infiniteLoop={true}
+                    itemsToShow={3}
+                    autoFocus={true}
+                    autoPlay={true}
+                    emulateTouch={true}
+                    useKeyboardArrows={true}
+                    swipeable={true}
+                  >
+                    {category.products.map((product, productIndex) => (
+                      <div key={productIndex} className="carousel-item">
+                        <Card className="product-card" elevation={4}>
+                          <CardActionArea>
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="product-image"
+                            />
+                            <CardContent>
+                              <Typography
+                                variant="h6"
+                                component="div"
+                                gutterBottom
+                                className="product-name"
+                              >
+                                {product.name}
+                              </Typography>
+                              <Typography
+                                gutterBottom
+                                variant="body2"
+                                color="text.secondary"
+                                className="product-description"
+                              >
+                                {/* Lizards are a widespread group of squamate
+                                reptiles, with over 6,000 species, ranging
+                                across all continents except Antarctica */}
+                              </Typography>
+                            </CardContent>
+                          </CardActionArea>
+                        </Card>
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+              </Paper>
             ))}
-          </Grid>
+          </div>
         </Paper>
       </div>
     </>
