@@ -1,19 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6a2f84d.css",
-    "main.js": "/static/js/main.ea865f81.js",
+    "main.css": "/static/css/main.9733c9da.css",
+    "main.js": "/static/js/main.288592da.js",
     "static/js/787.455e517d.chunk.js": "/static/js/787.455e517d.chunk.js",
     "static/media/img5.jpg": "/static/media/img5.2b69da0292bdd84f63fd.jpg",
+    "static/media/embroidery-yarn.jpeg": "/static/media/embroidery-yarn.b24731dfa16f0af1caf3.jpeg",
     "static/media/img3.jpeg": "/static/media/img3.f6efde10bef9ea31bbf0.jpeg",
     "static/media/img6.jpg": "/static/media/img6.a5345b8acb5d69e73c82.jpg",
+    "static/media/sewing-thread.jpeg": "/static/media/sewing-thread.2586e29840cce1b6c80c.jpeg",
+    "static/media/jacquard-fabric.jpg": "/static/media/jacquard-fabric.1efd4508bac48f12903a.jpg",
     "static/media/img-4.webp": "/static/media/img-4.d0f34b43cc1de1a25aef.webp",
     "static/media/carpet-01.jpeg": "/static/media/carpet-01.fc799c3b22623aed8149.jpeg",
+    "static/media/twisted-weft.webp": "/static/media/twisted-weft.b11ac044baf06a7109e7.webp",
     "static/media/logo.png": "/static/media/logo.df6cca541d8fff482cb5.png",
+    "static/media/dyed-warp.jpg": "/static/media/dyed-warp.601e9b039d8a68260311.jpg",
+    "static/media/twisted-warp.jpg": "/static/media/twisted-warp.601e9b039d8a68260311.jpg",
+    "static/media/dyed-weft.jpg": "/static/media/dyed-weft.1b735244500dde443f98.jpg",
+    "static/media/high-tenacity-yarn.jpg": "/static/media/high-tenacity-yarn.5e583d00a0911b39952b.jpg",
+    "static/media/fancy.jpeg": "/static/media/fancy.adc35ed1da496f34c95a.jpeg",
+    "static/media/carpet-yarn.webp": "/static/media/carpet-yarn.a18b8e1b6d3c173f6791.webp",
+    "static/media/interlinings.webp": "/static/media/interlinings.aa896ff937098fa4dbbc.webp",
+    "static/media/spun.jpg": "/static/media/spun.335704931904fb73a3c7.jpg",
     "static/media/lato-latin-400-italic.woff2": "/static/media/lato-latin-400-italic.516d382b3da7e145024b.woff2",
+    "static/media/shirting.webp": "/static/media/shirting.012ec55cf773db383c27.webp",
     "static/media/lato-latin-400-italic.woff": "/static/media/lato-latin-400-italic.b2c003608660cd56fd99.woff",
+    "static/media/zip-stitch-thread.jpeg": "/static/media/zip-stitch-thread.89fef468fceb47250bed.jpeg",
     "static/media/oswald-latin-600-normal.woff": "/static/media/oswald-latin-600-normal.dcbe195f6d770e5677d2.woff",
     "static/media/oswald-latin-ext-600-normal.woff": "/static/media/oswald-latin-ext-600-normal.f197b064bb94bc872b82.woff",
     "static/media/oswald-latin-600-normal.woff2": "/static/media/oswald-latin-600-normal.6223338bbb2b7e775cd1.woff2",
+    "static/media/industrial-thread.webp": "/static/media/industrial-thread.d06e28dacdbdddf232a0.webp",
     "static/media/oswald-latin-ext-600-normal.woff2": "/static/media/oswald-latin-ext-600-normal.274c91b714cd2f99d885.woff2",
     "static/media/oswald-cyrillic-600-normal.woff": "/static/media/oswald-cyrillic-600-normal.13d19f3c782f0c7369bb.woff",
     "static/media/oswald-cyrillic-600-normal.woff2": "/static/media/oswald-cyrillic-600-normal.978ec93c93f8550e0ee9.woff2",
@@ -24,12 +39,12 @@
     "static/media/oswald-cyrillic-ext-600-normal.woff": "/static/media/oswald-cyrillic-ext-600-normal.d5f7d259cc381537b76e.woff",
     "static/media/oswald-cyrillic-ext-600-normal.woff2": "/static/media/oswald-cyrillic-ext-600-normal.eb408cff8699f44c8fc5.woff2",
     "index.html": "/index.html",
-    "main.f6a2f84d.css.map": "/static/css/main.f6a2f84d.css.map",
-    "main.ea865f81.js.map": "/static/js/main.ea865f81.js.map",
+    "main.9733c9da.css.map": "/static/css/main.9733c9da.css.map",
+    "main.288592da.js.map": "/static/js/main.288592da.js.map",
     "787.455e517d.chunk.js.map": "/static/js/787.455e517d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6a2f84d.css",
-    "static/js/main.ea865f81.js"
+    "static/css/main.9733c9da.css",
+    "static/js/main.288592da.js"
   ]
 }
