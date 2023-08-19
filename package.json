@@ -2,7 +2,7 @@
   "name": "Sanskruti Text Trends",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pinakin7.github.io/sanskrutitexttrends/",
+  "homepage": "https://sanskrutitexttrends.co/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
