@@ -13,7 +13,6 @@ import Spun from "../img/weaving-yarn/spun.jpg";
 import Shirting from "../img/fabrics/shirting.webp";
 import Interlinings from "../img/fabrics/interlinings.webp";
 import JacquardFabric from "../img/fabrics/jacquard-fabric.jpg";
-import IndustrialTwister from "../img/textile-machines/industrial-twister.jpg";
 
 const categories = [
   {
@@ -38,30 +37,30 @@ const categories = [
       { name: "Spun Yarns", image: Spun },
     ],
   },
-  // {
-  //   name: "Fabrics",
-  //   products: [
-  //     { name: "Shirting", image: Shirting },
-  //     { name: "Interlining", image: Interlinings },
-  //     { name: "Jacquard Fabrics", image: JacquardFabric },
-  //   ],
-  // },
-  // {
-  //   name: "Textile Machines",
-  //   products: [
-  //     // { name: "TFO Machines", image: "" },
-  //     // { name: "Pre Winder", image: "" },
-  //     // { name: "Thread Yarn Plant", image: "" },
-  //     // { name: "Spun TFO", image: "" },
-  //     // { name: "High Bulk TFO", image: "" },
-  //     // { name: "Cabling Machine", image: "" },
-  //     { name: "Industrial Twister", image: IndustrialTwister },
-  //     // { name: "Soft Winder", image: "" },
-  //     // { name: "Dyed Yarn Rewinder", image: "" },
-  //     // { name: "Rapier Loom", image: "" },
-  //     // { name: "Air Jet Loom", image: "" },
-  //   ],
-  // },
+  {
+    name: "Fabrics",
+    products: [
+      { name: "Shirting", image: Shirting },
+      { name: "Interlining", image: Interlinings },
+      { name: "Jacquard Fabrics", image: JacquardFabric },
+    ],
+  },
+  {
+    name: "Textile Machines",
+    products: [
+      { name: "TFO Machines", image: "" },
+      { name: "Pre Winder", image: "" },
+      { name: "Thread Yarn Plant", image: "" },
+      { name: "Spun TFO", image: "" },
+      { name: "High Bulk TFO", image: "" },
+      { name: "Cabling Machine", image: "" },
+      { name: "Industrial Twister", image: "" },
+      { name: "Soft Winder", image: "" },
+      { name: "Dyed Yarn Rewinder", image: "" },
+      { name: "Rapier Loom", image: "" },
+      { name: "Air Jet Loom", image: "" },
+    ],
+  },
 ];
 
 export default categories;

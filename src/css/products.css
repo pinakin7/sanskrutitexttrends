@@ -1,92 +1,35 @@
-/* CarouselCard.css */
-
-.carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  margin: 2rem;
-  transition: transform 0.3s ease-in-out;
-  width: auto;
-
-  &:hover {
-    transform: scale(1.2);
-  }
+.slide-enter {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
-.product-card {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
 }
 
-.product-image {
-  width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  border-radius: 8px 8px 0 0;
+.slide-exit {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.arrow-prev,
-.arrow-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 1;
+.slide-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 300ms, transform 300ms;
 }
 
-.arrow-prev {
-  left: 0;
-  border-radius: 0 4px 4px 0;
+.card {
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
-.arrow-next {
-  right: 0;
-  border-radius: 4px 0 0 4px;
+.animate {
+  opacity: 1;
 }
 
-.category {
-  padding: 10px;
-  background-color: #3f51b5;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.category:hover {
-  background-color: #304084;
+.product:hover{
   transform: scale(1.1);
-}
-
-.product-name {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
-  /* Add more styling as needed */
-}
-
-.product-description {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  /* Add more styling as needed */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
