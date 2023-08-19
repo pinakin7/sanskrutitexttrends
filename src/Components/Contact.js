@@ -56,7 +56,7 @@ export default function Contact() {
   });
 
   return (
-    <div id="contact" style={{ marginTop: "5rem", marginBottom:"5rem" }}>
+    <div id="contact" style={{ marginTop: "5rem", marginBottom: "5rem" }}>
       <Container
         ref={ref}
         className={`${classes.slideInOut} ${inView ? "slide-in" : "slide-out"}`}
@@ -64,10 +64,17 @@ export default function Contact() {
         <Divider variant="middle" />
         <Paper elevation={0}>
           <Grid container spacing={2}>
-            <Grid item xs={8}>
+            <Grid item xs={12} md={8}>
               <ContactForm />
             </Grid>
-            <Grid item xs={4} height={800} style={{ marginTop: "7rem" }}>
+            <Grid
+              item
+              xs={12}
+              md={4}
+              height={800}
+              style={{ marginTop: "7rem", display: 'flex',
+              justifyContent: 'center' }}
+            >
               <Stack
                 container
                 spacing={2}
@@ -103,7 +110,8 @@ export default function Contact() {
                         Chat with Us
                       </Typography>
                       <Typography color="text.secondary">
-                        You can now directly contact our representative on Whatsapp
+                        You can now directly contact our representative on
+                        Whatsapp
                       </Typography>
                     </CardContent>
                     <CardActions>
