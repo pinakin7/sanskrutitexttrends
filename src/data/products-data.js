@@ -15,7 +15,6 @@ import Interlinings from "../img/fabrics/interlinings.webp";
 import JacquardFabric from "../img/fabrics/jacquard-fabric.jpg";
 import IndustrialTwister from "../img/textile-machines/industrial-twister.jpg";
 
-
 const categories = [
   {
     name: "Thread",

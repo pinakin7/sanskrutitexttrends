@@ -3,8 +3,10 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  Container,
   CssBaseline,
   Divider,
+  Grid,
   Paper,
   Typography,
 } from "@mui/material";
@@ -54,8 +56,19 @@ const Products = () => {
     threshold: 0.4, // Adjust the threshold as needed
   });
 
+  const allProducts = categories.reduce((acc, category) => {
+    return [
+      ...acc,
+      ...category.products.map((product) => ({
+        ...product,
+        category: category.name,
+      })),
+    ];
+  }, []);
+
   return (
     <>
+      {console.log(allProducts)}
       <Divider variant="middle" />
       <div
         id="products"
@@ -81,7 +94,7 @@ const Products = () => {
         </Typography>
         <CssBaseline />
         <Paper elevation={3} style={{ padding: "2rem", margin: "2rem" }}>
-          <div className="product-display">
+          {/* <div className="product-display">
             {categories.map((category, categoryIndex) => (
               <Paper
                 style={{
@@ -131,9 +144,9 @@ const Products = () => {
                                 color="text.secondary"
                                 className="product-description"
                               >
-                                {/* Lizards are a widespread group of squamate
+                                Lizards are a widespread group of squamate
                                 reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica */}
+                                across all continents except Antarctica
                               </Typography>
                             </CardContent>
                           </CardActionArea>
@@ -144,7 +157,22 @@ const Products = () => {
                 </div>
               </Paper>
             ))}
-          </div>
+          </div> */}
+          <Container>
+            <Grid container spacing={2}>
+              {allProducts.map((prod, prodIdx) => (
+                <Grid item xs={12} sm={6} md={4} key={prodIdx}>
+                  <Card>
+                    <CardContent>
+                      <img src={prod.image} alt={prod.name} />
+                      <h3>{prod.name}</h3>
+                      <p>Category: {prod.category}</p>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         </Paper>
       </div>
     </>
