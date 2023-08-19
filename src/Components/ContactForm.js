@@ -95,7 +95,7 @@ const ContactForm = () => {
         </Paper>
       )}
       {!submitted && (
-        <Paper elevation={3} style={{ margin: "2rem" }}>
+        <Paper elevation={0} style={{ margin: "2rem" }}>
           <form onSubmit={(e) => e.preventDefault()}>
             <Grid
               container
