@@ -109,6 +109,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <Typography
                   variant="h5"
@@ -122,6 +124,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <TextField
                   label="Name"
@@ -137,6 +141,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <TextField
                   label="Email"
@@ -153,6 +159,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <TextField
                   label="Organisation"
@@ -169,6 +177,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <FormControl fullWidth>
                   <InputLabel id="positionLabel">Position *</InputLabel>
@@ -196,6 +206,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <FormControl fullWidth>
                   <InputLabel id="subjectLabel">Subject *</InputLabel>
@@ -232,6 +244,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <TextField
                   label="Message"
@@ -249,6 +263,8 @@ const ContactForm = () => {
               <Grid
                 style={{ margin: "0.5rem", textAlign: "center" }}
                 width={400}
+                item
+                xs={12}
               >
                 <Button
                   variant="contained"

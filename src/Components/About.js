@@ -46,7 +46,7 @@ export default function About() {
   }, []);
 
   return (
-    <div id="about" style={{ margin: "5rem" }}>
+    <div id="about" style={{ marginTop: "5rem", marginBottom:"5rem" }}>
       <Container
         className={`${classes.fadeIn} ${isVisible ? "fade-entered" : ""}`}
       >

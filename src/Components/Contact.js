@@ -56,7 +56,7 @@ export default function Contact() {
   });
 
   return (
-    <div id="contact">
+    <div id="contact" style={{ marginTop: "5rem", marginBottom:"5rem" }}>
       <Container
         ref={ref}
         className={`${classes.slideInOut} ${inView ? "slide-in" : "slide-out"}`}

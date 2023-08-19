@@ -8,7 +8,7 @@ import items from "../data/home-carousel-data";
 export default function Home() {
 
   return (
-    <div id="home" style={{ margin: "5rem" }}>
+    <div id="home" style={{ marginTop: "5rem", marginBottom:"5rem" }}>
       <Container>
         <Carousel
           swipe={true}
